@@ -21,7 +21,7 @@ tweets_list = []
 # SCRAPE DATA USING TwitterSearchScraper
 if word:
     if option=='Keyword':
-        for i,tweet in enumerate(sntwitter.TwitterSearchScraper(f'{word} + since:{start} until:{end}').get_items()):
+        for i,tweet in enumerate(sntwitter.TwitterTweetScraper(f'{word} + since:{start} until:{end}').get_items()):
             if i>tweet_c:
                 break
             tweets_list.append([ tweet.id, tweet.date,  tweet.content, tweet.lang, tweet.user.username, tweet.replyCount, tweet.retweetCount,tweet.likeCount, tweet.source, tweet.url ])
